@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block title%}Журнал{%endblock%}
+{% block content %}
+	<select>
+  		<option>Расписание</option>
+  		<option>Оценки</option>
+	</select>
+	{%if timetable%}
+		{% for a in timetable %}
+			<h3>{{ a.lessons }}</h3>
+		{% endfor %}
+		
+	{% else %}
+		Расписания нет :<
+	{% endif %}
+{% endblock  %}

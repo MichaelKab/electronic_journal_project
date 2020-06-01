@@ -22,7 +22,7 @@ urlpatterns = [
     #path('main/', include('main.urls'))
 ]
 urlpatterns += [
-     path('first/', include('application.urls')),
+     path('main/', include('application.urls')),
 ]
 urlpatterns += [
     path('', RedirectView.as_view(url='/application/', permanent=True)),

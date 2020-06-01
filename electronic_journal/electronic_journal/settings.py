@@ -55,7 +55,9 @@ ROOT_URLCONF = 'electronic_journal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'electronic_journal/templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

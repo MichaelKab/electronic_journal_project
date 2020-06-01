@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block title%}{{articles.article_title}}{%endblock%}
+{% block content %}
+	<h5> {{articles.article_title}} </h5>
+	<p> {{articles.text}}</p>
+	<em> {{articles.pub_data}}</em>
+	<form action="{% url 'articles:comments_art' %}" metod = "POST"><br>
+		<input type="text" required placeholder="Введите имя" name="name">
+		<textarea name="text" required="" placeholder="Текст" cols="40" rows="40"></textarea><br>
+		<button type="submit">Оставить коментарий</button>
+	</form>
+{% endblock  %}
