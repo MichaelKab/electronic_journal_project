@@ -4,11 +4,38 @@
 <head>
 
 	<meta charset="UTF-8">
-
+	<link rel="stylesheet" href="main.css"/>
 	<title> {% block title %}страница Главная{% endblock title %}</title>
+	
+	<style>
+	div.hr {
+    margin: 2; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+	div.hr h3 {
+	    display: inline; /* Отображать как строчный элемент */
+	    margin-right: 5px; /* Отступ слева */
+	    border: 1px solid #000; /* Рамка вокруг текста */
+	    box-shadow: 1px 1px 1px;
+	    border-radius: 10px;
+	    padding: 3px; /* Поля вокруг текста */
+	   }
+	div.lessons {
+	border-radius: 10px;
+    box-shadow: 1px 1px 1px;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    background-color: #e9edf5;
+    color: #300;
+	}
+	</style>
 </head>
 
 <body>
+	<div class = 'hr'>  
+	    <h3>  <a href="">Расписание</a> </h3>
+	    <h3>  <a href="marks">Оценки</a>  </h3>
+	 </div>
 	{% block content %}
 	{% endblock  %}
 </body>

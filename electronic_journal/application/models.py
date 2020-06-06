@@ -35,7 +35,7 @@ class daily_timetable(models.Model):
 	date = models.DateTimeField(null=True, blank=True)#, default=datetime.timezone)
 	number_of_lessons = models.CharField(max_length=1, help_text="Количество уроков")
 	#for i in range(number_of_lessons.text()):
-	lessons = models.CharField(max_length=30, help_text="выберете уроки")
+	lessons = models.CharField(max_length=200, help_text="выберете уроки")
 	#lessons = models.ManyToManyField(lesson, help_text="выберете уроки")
 	#number_of_lessons = len(lessons)
 	def __str__(self):
@@ -43,6 +43,8 @@ class daily_timetable(models.Model):
 
 class timetable(models.Model):
 	date = models.DateField(null=True, blank=True)
+
+#class day_lesson():
 
 class classes(models.Model):
 	PRE_Students_list = Users.objects.all().filter(status='s')

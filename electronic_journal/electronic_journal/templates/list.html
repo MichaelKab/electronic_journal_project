@@ -2,13 +2,19 @@
 
 {% block title%}Журнал{%endblock%}
 {% block content %}
-	<select>
-  		<option>Расписание</option>
-  		<option>Оценки</option>
-	</select>
 	{%if timetable%}
 		{% for a in timetable %}
-			<h3>{{ a.lessons }}</h3>
+		<div class = "day_timetable" style = "flex-direction: column; box-sizing: border-box; display: flex; opacity: 1; font-size: 13px;
+    		color: #300;">
+			<div class = 'day_data' style = "flex-direction: row; box-sizing: border-box; max-height: 100%;">
+				<h3 class = 'day' >{{ a.Day }}, {{a.date}}</h3>
+			</div>
+			<div class = "lessons" >
+				{% for el in a.lessons %}
+					<h4 class = 'lesson'>{{ el }}</h4>
+				{% endfor %}
+		</div>
+			<!--<h3>{{ a.lessons }}</h3>-->
 		{% endfor %}
 		
 	{% else %}
